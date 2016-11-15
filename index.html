@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ngapp="app" ng-controller="globalCtrl">
+<head>
+  <title>{{title}}Flash</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="48 hours. One word. One epic photo competition.">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <!-- <link rel="stylesheet" href="app.css"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <!-- TODO: When publishing, replace materialize css/js with bare bones versions. Manual compile. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+</head>
+<body>
+
+
+<select ng-model="select.value" material-select>
+  <option ng-repeat="value in select.choices">{{value}}</option>
+</select>
+
+<h5>You selected: <b>{{select.value}}</b></h5>
+
+
+</body>
+</html>

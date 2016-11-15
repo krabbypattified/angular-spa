@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ngapp="app" ng-controller="globalCtrl">
+<html ng-app="app" ng-controller="GlobalCtrl">
 <head>
-  <title>{{title}}Flash</title>
+  <title>{{title}} | Flash</title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="48 hours. One word. One epic photo competition.">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,13 +16,11 @@
 </head>
 <body>
 
-
 <select ng-model="select.value" material-select>
   <option ng-repeat="value in select.choices">{{value}}</option>
 </select>
 
 <h5>You selected: <b>{{select.value}}</b></h5>
-
 
 </body>
 </html>

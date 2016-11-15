@@ -1,8 +1,4 @@
-var app = angular.module('app', ['ngRoute'])
-
-.controller('GlobalCtrl', ['$scope', function ($scope) {
-  $scope.title = "Title";
-}])
+angular.module("app", [])
 
 .controller('TodoController', ['$scope', function ($scope) {
   $scope.todos = [
@@ -13,9 +9,4 @@ var app = angular.module('app', ['ngRoute'])
     { name: 'Setup MongoDB database', completed: false },
     { name: 'Be awesome!', completed: false },
   ];
-}])
-
-.controller('EmailController', ['$scope', function ($scope) {
-  $scope.name = "Gabe";
-  $scope.email = "rogangabe@gmail.com";
 }]);

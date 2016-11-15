@@ -4,23 +4,58 @@
   <title>{{title}} | Flash</title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="48 hours. One word. One epic photo competition.">
+
+  <!-- Styles -->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-  <!-- <link rel="stylesheet" href="app.css"> -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Angular & jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <!-- TODO: When publishing, replace materialize css/js with bare bones versions. Manual compile. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+
+  <!-- Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+
+  <!-- App -->
   <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/app.route.js"></script>
 </head>
 <body>
 
-<select ng-model="select.value" material-select>
-  <option ng-repeat="value in select.choices">{{value}}</option>
-</select>
+<ng-view></ng-view>
 
-<h5>You selected: <b>{{select.value}}</b></h5>
+<!-- Todo Template -->
+<script type="text/ng-template" id="/todos.html">
+  <ul>
+    <li ng-repeat="todo in todos">
+      <input type="checkbox" ng-model="todo.completed" id='{{todo.name}}'>
+      <label for="{{todo.name}}">{{ todo.name }}</label>
+    </li>
+  </ul>
+</script>
+
+<!-- Email Template -->
+<script type="text/ng-template" id="/email.html">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">{{name}}</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">{{email}}</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "name": "angular-spa",
+  "version": "1.0.0",
+  "description": "Gabe's Angular SPA Boilerplate",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Rogan",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.11.0",
+    "browser-sync": "^2.17.6",
+    "gulp": "^3.9.1",
+    "gulp-kit": "^0.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-stylus": "^2.6.0"
+  }
+}

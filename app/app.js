@@ -2,6 +2,7 @@ var app = angular.module('app', ['ngRoute'])
 
 .controller('GlobalCtrl', ['$scope', function ($scope) {
   $scope.title = "Title";
+  $scope.navState = "x";
 }])
 
 .controller('TodoController', ['$scope', function ($scope) {

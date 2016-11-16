@@ -17,28 +17,30 @@
 
   <!-- Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
-  <!-- App -->
-  <script type="text/javascript" src="app/app.js"></script>
 </head>
 <body>
 
 <ng-view></ng-view>
 
+<!-- @import sandbox/templates -->
 
+<!-- Import app & pages -->
+<script>
+<!-- @import app.js -->
 
-<!-- Import controllers -->
-<!-- @import components/competitions/template -->
-<!-- @import components/news/template -->
+<!-- @import pages/news/ctrl.js -->
+<!-- @import pages/competitions/ctrl.js -->
+<!-- @import pages/single-competition/ctrl.js -->
+<!-- @import pages/community/ctrl.js -->
 
-<!-- Route the user -->
-<script type="text/javascript" src="app/app.route.js"></script>
+<!-- @import pages/dashboard/ctrl.js -->
+<!-- @import pages/dashboard-news/ctrl.js -->
+<!-- @import pages/dashboard-competitions/ctrl.js -->
+<!-- @import pages/dashboard-featured-user/ctrl.js -->
+<!-- @import pages/dashboard-users/ctrl.js -->
 
-<!-- Import templates -->
-<!-- @import components/competitions/template -->
-<!-- @import components/news/template -->
-
-
+<!-- @import app.route.js -->
+</script>
 
 </body>
 </html>

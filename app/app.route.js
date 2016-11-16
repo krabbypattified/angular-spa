@@ -1,8 +1,8 @@
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/todos.html',
-      controller: 'TodoController'
+      templateUrl: 'app/pages/news/view.html',
+      controller: 'newsCtrl'
     })
 
     .when('/email', {
@@ -16,6 +16,6 @@ app.config(['$routeProvider', function ($routeProvider) {
     })
 
     .otherwise({
-        redirect: '/index.html'
+        redirectTo: '/'
     });
 }]);

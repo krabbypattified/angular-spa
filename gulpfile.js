@@ -11,17 +11,10 @@ var gulp         = require('gulp'),
 
 
 
-// Scripts
-//////////////////////////////
-gulp.task('scripts', function () {
-gulp.src('app/*.js')  // TODO: make this just app.js and compile
-    .pipe(reload({stream:true}));
-});
-
 // Styles
 //////////////////////////////
 gulp.task('styles', function () {
-gulp.src('assets/styl/*.styl')
+gulp.src('assets/styl/main.styl')
     .pipe(plumber({errorHandler: notify.onError({
           title: 'Stylus Error',
           message: '<%= error.message %>'})}))
@@ -33,7 +26,7 @@ gulp.src('assets/styl/*.styl')
 // Kit
 //////////////////////////////
 gulp.task('kit', function () {
-gulp.src('assets/kit/*.kit')
+gulp.src('app/index.kit')
     .pipe(plumber({errorHandler: notify.onError({
           title: 'Kit Error',
           message: '<%= error.message %>'})}))
@@ -41,7 +34,6 @@ gulp.src('assets/kit/*.kit')
     .pipe(gulp.dest(''))
     .pipe(reload({stream:true}));
 });
-
 
 
 
@@ -56,11 +48,11 @@ gulp.task('browser-sync', function () {
 // Watch
 //////////////////////////////
 gulp.task('watch', function () {
-  gulp.watch('app/**/*.js', ['scripts']);
+  gulp.watch('app/**/*.js', ['kit']); // to compile JS into index.kit
   gulp.watch('assets/styl/**/*.styl', ['styles']);
   gulp.watch('assets/kit/**/*.kit', ['kit']);
 });
 
 // Default
 //////////////////////////////
-gulp.task('default', ['scripts', 'styles', 'kit', 'browser-sync', 'watch']);
+gulp.task('default', ['styles', 'kit', 'browser-sync', 'watch']);

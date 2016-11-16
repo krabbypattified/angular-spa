@@ -1,0 +1,7 @@
+<!-- Todo Template -->
+<ul>
+  <li ng-repeat="todo in todos">
+    <input type="checkbox" ng-model="todo.completed" id='{{todo.name}}'>
+    <label for="{{todo.name}}">{{ todo.name }}</label>
+  </li>
+</ul>

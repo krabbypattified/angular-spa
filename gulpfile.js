@@ -3,6 +3,7 @@
 var gulp         = require('gulp'),
     stylus       = require('gulp-stylus'),
     autoprefixer = require('autoprefixer-stylus'),
+    concat       = require('gulp-concat'),
     kit          = require('gulp-kit'),
     plumber      = require('gulp-plumber'),
     notify       = require('gulp-notify'),
@@ -23,10 +24,19 @@ gulp.src('assets/styl/main.styl')
     .pipe(reload({stream:true}));
 });
 
+// Scripts
+//////////////////////////////
+gulp.task('scripts', function () {
+gulp.src(['app/app.js', 'app/**/!(app).js'])
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('assets/js'))
+    .pipe(reload({stream:true}));
+});
+
 // Kit
 //////////////////////////////
 gulp.task('kit', function () {
-gulp.src('app/index.kit')
+gulp.src('app/root-view/index.kit')
     .pipe(plumber({errorHandler: notify.onError({
           title: 'Kit Error',
           message: '<%= error.message %>'})}))
@@ -48,11 +58,11 @@ gulp.task('browser-sync', function () {
 // Watch
 //////////////////////////////
 gulp.task('watch', function () {
-  gulp.watch('app/**/*.js', ['kit']); // to compile JS into index.kit
-  gulp.watch('assets/styl/**/*.styl', ['styles']);
-  gulp.watch('assets/kit/**/*.kit', ['kit']);
+  gulp.watch(['app/**/*.styl', 'assets/styl/**/*.styl'], ['styles']);
+  gulp.watch('app/**/*.js', ['scripts']);
+  gulp.watch('app/**/*.kit', ['kit']);
 });
 
 // Default
 //////////////////////////////
-gulp.task('default', ['styles', 'kit', 'browser-sync', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'kit', 'browser-sync', 'watch']);

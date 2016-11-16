@@ -6,12 +6,12 @@ app.config(['$routeProvider', function ($routeProvider) {
     })
 
     .when('/email', {
-      templateUrl: '/email.html',
+      templateUrl: 'app/sandbox/email.html',
       controller: 'EmailController'
     })
 
     .when('/todo', {
-      templateUrl: '/todos.html',
+      templateUrl: 'app/sandbox/todo.html',
       controller: 'TodoController'
     })
 

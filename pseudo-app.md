@@ -1,9 +1,7 @@
 <!--
 TODO: get it working so that the basic view loads, and typing a url loads that page on top of it
-      4. Edit ctrl.js & view.html as if it were a regular Angular app!
-      5. If you want a sandbox, just edit the 'sandbox' folder's ctrl.js and view.html. Then navigate to url: /sandbox
-      
-NOTE: just do placeholder states with an h1. Simplified/demo angularfire CRUD comes next (simplify the database and export the complex one). Next, CSSify each view component. Next, complexify the database (sorta based on CSS elements). Next, hook up GETs. Finally, hook up rest of CRUD.
+
+NOTE: just do placeholder states with an h1. Simplified/demo angularfire CRUD comes next (simplify the database and export the complex one). Next, basic CSSify each view component. Next, complexify the database (sorta based on CSS elements). Next, hook up GETs. Next, hook up rest of CRUD. Finally, if there's time, do an XD mockup and implementation.
 
 NOTE: 'pages' structure (no compiling required)
   news
